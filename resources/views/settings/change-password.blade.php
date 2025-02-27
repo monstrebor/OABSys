@@ -10,8 +10,9 @@
     <div class="w-full h-full">
         @include('Admin.partials.navbar')
         @include('Admin.partials.sidebar')
-        @include('layout.all_notif')
-        <livewire:settings.change-password>
+        <div class="offset-3 col-6 mt-4">
+            <livewire:settings.change-password>
+        </div>
 
     </div>
 @endsection

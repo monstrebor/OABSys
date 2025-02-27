@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'Barangay Patubig Web Info')
+@section('title', 'Ordering and Billing System')
 
 @section('script')
     <script src="https://cdn.tailwindcss.com"></script>

@@ -8,20 +8,23 @@ use Livewire\Component;
 
 class ChangePassword extends Component
 {
-    #[Rule('required')]
-    public $old_password;
+    public $old_password, $new_password;
 
-    #[Rule('required|min:5')]
-    public $new_password;
+    protected $rules = [
+        'old_password' => 'required',
+        'new_password' => 'required|min:8',
+    ];
 
     public function change_password()
     {
-        $this->form->validate();
+        // Validate input
+        $this->validate(); // ✅ Correct way to validate
+
         $user = Auth::user();
 
-        if (Hash::check($this->form->old_password, $user->password)) {
+        if (Hash::check($this->old_password, $user->password)) {
             $user->update([
-                'password' => Hash::make($this->form->new_password),
+                'password' => Hash::make($this->new_password),
             ]);
             session()->flash('success', 'Your password has been updated successfully.');
             return;
