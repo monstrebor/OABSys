@@ -9,6 +9,7 @@
 @endsection
 
 @section('content')
+
     <div class="w-full h-full">
         @include('partials.navbar')
     </div>
