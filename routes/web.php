@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     //settings
     Route::view('/settings', 'settings.index')->name('admin.settings');
     Route::view('/change-password', 'settings.change-password')->name('admin.password');
+
+    //profile
+    Route::view('/admin-profile', 'Admin.Profile.index')->name('admin.profile');
 });

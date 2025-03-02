@@ -54,13 +54,13 @@
         }
 
         /* Hide text when collapsed */
-        .sidebar span {
+        .sidebar span, .sidebar_div {
             display: none;
             transition: opacity 0.3s ease-in-out;
         }
 
         /* Show text when hovered */
-        .sidebar:hover span {
+        .sidebar:hover span, .sidebar:hover .sidebar_div {
             display: inline;
             opacity: 1;
             margin-left: 10px;

@@ -23,7 +23,6 @@ class Time
     public static function getGreeting()
     {
         $hour = date('H');
-
         if ($hour <= 24 && $hour < 12) {
             return 'Good Morning';
         } elseif ($hour >= 12 && $hour < 18) {

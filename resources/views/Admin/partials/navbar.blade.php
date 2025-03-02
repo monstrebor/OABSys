@@ -14,7 +14,7 @@
                         class="img-fluid rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" />
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="{{route('admin.profile')}}">Profile</a></li>
                     <li><a class="dropdown-item" href="{{route('admin.settings')}}">Setting</a></li>
                     <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
