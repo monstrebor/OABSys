@@ -29,5 +29,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::view('/change-password', 'settings.change-password')->name('admin.password');
 
     //profile
-    Route::view('/admin-profile', 'Admin.Profile.index')->name('admin.profile');
+    Route::get('/admin-profile',[ProfileController::class, 'profile_index'])->name('admin.profile');
+    Route::post('/admin-profile-store',[ProfileController::class, 'profile_store'])->name('adminProfile.store');
+
 });
