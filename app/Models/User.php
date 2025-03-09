@@ -38,4 +38,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'creator_id', 'id');
+    }
 }

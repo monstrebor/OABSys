@@ -15,7 +15,7 @@
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> <span>Supplier</span></a>
+                <a class="nav-link" href="{{route('supplier.index')}}"><i class="fas fa-user"></i> <span>Supplier</span></a>
             </li>
         </div>
     </ul>

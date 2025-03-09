@@ -17,11 +17,11 @@ class ProfileController extends Controller
         return view("Admin.profile.index", compact("userId"));
     }
 
-    public function profile_store(Request $request, Image $imageService)
+    public function profile_update(Request $request, Image $imageService)
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . auth()->id(), 
+            'email' => 'required|email|unique:users,email,' . auth()->id(),
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 

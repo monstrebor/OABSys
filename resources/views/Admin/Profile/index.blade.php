@@ -16,7 +16,8 @@
             <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-xl mt-4">
                 @include('layout.all_notif')
                 <h1 class="text-center text-2xl font-bold mb-6">INFORMATION</h1>
-                <button type="button" class="btn btn-primary offset-10 mb-1" data-bs-toggle="modal" data-bs-target="#profileModal">
+                <button type="button" class="btn btn-primary offset-10 mb-1" data-bs-toggle="modal"
+                    data-bs-target="#profileModal">
                     Edit
                 </button>
                 <table class="w-full border border-gray-200 rounded-lg">
@@ -47,7 +48,8 @@
                     </div>
                     <div class="modal-body">
                         <!-- Profile Form -->
-                        <form action="{{route('adminProfile.store')}}" method="POST" enctype="multipart/form-data" class="space-y-4">
+                        <form id="profileForm" action="{{ route('adminProfile.update') }}" method="POST"
+                            enctype="multipart/form-data" class="space-y-4">
                             @csrf
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
@@ -74,5 +76,5 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/profile.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
 @endsection

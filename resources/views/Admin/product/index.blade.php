@@ -46,16 +46,7 @@
                                 <td class="px-4 py-2 border-b">{{ $item->supplier_contact }}</td>
                                 <td class="px-4 py-2 border-b">#</td>
                                 <td class="px-4 py-2 border-b">{{ $userName->name }}</td>
-                                <td class="px-4 py-2 border-b">
-                                    <button
-                                        class="edit-btn border border-green-400 bg-green-100 text-green-600 hover:bg-green-200 active:bg-green-300 p-2 pl-4 rounded-md shadow-md pr-4 transition duration-200"
-                                        data-supplier-id="{{ $item->id }}"
-                                        data-supplier-name="{{ $item->supplier_name }}"
-                                        data-supplier-location="{{ $item->supplier_location }}"
-                                        data-supplier-contact="{{ $item->supplier_contact }}">
-                                        Edit
-                                    </button>
-                                </td>
+                                <td class="px-4 py-2 border-b">#</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -100,45 +91,6 @@
                 </div>
             </div>
         </div>
-
-        <!--Edit Modal Section-------------------------->
-        <div id="editModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
-            <div class="bg-white p-6 rounded shadow-md w-[500px]">
-                <form action="{{route('supplier.update')}}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <h2 class=" text-center text-2xl font-bold mb-4">Edit Loan</h2>
-
-                    <input type="hidden" id="edit-supplier-id" name="id">
-
-                    <div class="mb-4">
-                        <div>
-                            <div class="mb-4 w-full">
-                                <label for="edit-supplier-name" class="block text-sm font-bold">Supplier Name</label>
-                                <input type="text" id="edit-supplier-name" name="supplier_name"
-                                    class="mt-1 p-2 block w-full border rounded">
-                            </div>
-                            <div class="mb-4 w-full">
-                                <label for="edit-supplier-location" class="block text-sm font-bold">Supplier Location</label>
-                                <input type="text" id="edit-supplier-location" name="supplier_location"
-                                    class="mt-1 p-2 block w-full border rounded">
-                            </div>
-                            <div class="mb-4 w-full">
-                                <label for="edit-supplier-contact" class="block text-sm font-bold">Supplier Contact</label>
-                                <input type="text" id="edit-supplier-contact" name="supplier_contact"
-                                    class="mt-1 p-2 block w-full border rounded">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-around">
-                        <button type="button" class="bg-red-600 text-white px-4 py-2 rounded"
-                            onclick="closeEditModal()">Cancel</button>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Save Changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
         <script src="{{ asset('js/admin.js') }}"></script>
     </div>
 @endsection
