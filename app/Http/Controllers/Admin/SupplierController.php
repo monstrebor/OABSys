@@ -37,7 +37,7 @@ class SupplierController extends Controller
     {
         // Validate request
         $validated = $request->validate([
-            'id' => 'required|exists:suppliers,id', 
+            'id' => 'required|exists:suppliers,id',
             'supplier_name' => 'required|string|max:255',
             'supplier_location' => 'required|string|max:255',
             'supplier_contact' => 'required|string|max:255',
@@ -54,6 +54,12 @@ class SupplierController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Supplier updated successfully!');
+    }
+
+    public function supplier_destroy($id){
+        Supplier::findOrFail( $id )->delete();
+
+        return redirect()->back()->with('success','Supplier deleted successfully');
     }
 
 }

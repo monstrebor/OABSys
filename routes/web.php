@@ -36,4 +36,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/suppliers', [SupplierController::class, 'supplier_index'])->name('supplier.index');
     Route::post('/suppliers-create', [SupplierController::class, 'supplier_store'])->name('supplier.store');
     Route::put('/suppliers-update', [SupplierController::class, 'supplier_update'])->name('supplier.update');
+    Route::delete('/supplier-delete/{id}', [SupplierController::class,'supplier_destroy'])->name('supplier.destroy');
 });
