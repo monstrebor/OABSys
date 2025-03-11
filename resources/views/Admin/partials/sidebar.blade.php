@@ -17,6 +17,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('supplier.index')}}"><i class="fas fa-user"></i> <span>Supplier</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('product.index')}}"><i class="fas fa-user"></i> <span>Product</span></a>
+            </li>
         </div>
     </ul>
 </div>

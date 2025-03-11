@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\{SupplierController,ProductController};
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +37,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::post('/suppliers-create', [SupplierController::class, 'supplier_store'])->name('supplier.store');
     Route::put('/suppliers-update', [SupplierController::class, 'supplier_update'])->name('supplier.update');
     Route::delete('/supplier-delete/{id}', [SupplierController::class,'supplier_destroy'])->name('supplier.destroy');
+
+    //product
+    Route::get('/products',[ProductController::class,'product_index'])->name('product.index');
+    Route::post('/products-create', [ProductController::class, 'product_store'])->name('product.store');
 });

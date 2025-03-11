@@ -1,6 +1,6 @@
 @extends('Admin.layout.layout')
 
-@section('title', 'Supplier')
+@section('title', 'Supplier Page')
 
 @section('script')
 
