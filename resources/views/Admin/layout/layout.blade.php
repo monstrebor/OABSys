@@ -16,6 +16,7 @@
     </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    @livewireStyles
     <style>
         /* Sidebar styling */
         .sidebar {
@@ -99,6 +100,7 @@
 
 <body>
     @yield('content')
+    @livewireScripts
 </body>
 
 </html>

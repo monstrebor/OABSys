@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserLoginController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,9 @@ Route::group(['middleware' => 'guest'], function () {
     Route::view('/', 'Home.index')->name('login');
     Route::view('/home', 'Home.index')->name('home.login');
     Route::view('/register', 'Home.register')->name('register.user');
-    Route::view('/login','Home.login')->name('login.index');
-    Route::post('/login-store', [UserLoginController::class, 'user_login'])->name('login.store');
+    Route::view('/login', 'Home.login')->name('login.index');
+    Route::post('/login-store', [AuthController::class, 'login'])->name('login.store');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
@@ -28,5 +29,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     //settings
     Route::view('/settings', 'settings.index')->name('admin.settings');
-    Route::view('/change-password', 'settings.change-password')->name('admin.password');
+    Route::get('/admin/change-password', function () {
+        return 'CHANGE PASSWORD WORKS';
+    })->name('admin.password')->middleware('auth');
 });
